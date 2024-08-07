@@ -1,3 +1,41 @@
+// #include <stdio.h>
+
+// void insertion_short(int arr[], int n){
+//   int i, j, temp;
+//   for (i=1; i<n; i++){
+//     temp = arr[i];
+//     j= i-1;
+//     while(j>=0 && temp<=arr[temp]){
+//       arr[j+1] = arr[j];
+//       j--;
+//     }
+//     arr[j+1] = temp;
+//   }
+// }
+
+// void print_array(int arr[], int size){
+//   for (int i=0; i<size; i++){
+//     printf("%d ", arr[i]);
+//   }
+// }
+
+// int main(){
+//   int size;
+//   printf("Enter the size of the array: ");
+//   scanf("%d", &size);
+//   int arr[size];
+//   for (int i=0; i<size; i++){
+//     printf("Enter the %d index value: ", i);
+//     scanf("%d", &arr[i]);
+//   }
+//   insertion_short(arr, size);
+//   printf("Shorted array:\n");
+//   print_array(arr,size);
+// }
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
