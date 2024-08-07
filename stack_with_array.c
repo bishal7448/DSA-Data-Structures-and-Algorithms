@@ -7,31 +7,31 @@ int top=-1;
 
 void push(){
   if (top==size-1){
-    printf("Stack is overflow.\n");
+    printf("The stack is overflow.\n");
   }else{
-    top++;
-    int data;
-    printf("Enter the data you want push: ");
-    scanf("%d", &data);
-    stack[top]=data;
+      int data;
+      printf("Enter the data want to push: ");
+      scanf("%d", &data);
+      top++;
+      stack[top]=data;
   }
 }
 
 void pop(){
-  if (top==-1){
-    printf("Stack is underflow.\n");
+  if(top==-1){
+    printf("The stack is underflow.\n");
   }else{
     int backup=stack[top];
     top--;
-    printf("The pop element is %d.\n", backup);
+    printf("The popped data is %d.\n", backup);
   }
 }
 
-void display(){
-  if (top==-1){
-    printf("Stack is underflow.\n");
+void daisplay(){
+  if(top==-1){
+    printf("The stack is underflow.\n");
   }else{
-    for (int i=0; i<top; i++){
+    for (int i=top; i>=0; top--){
       printf("%d", stack[i]);
     }
   }
@@ -40,20 +40,24 @@ void display(){
 int main(){
   while (1){
     char ch;
-    printf("Enter the choice what you want to do ('1' for push, '2' for pop, '3' for display, '4' for exit.): \n");
+    printf("Enter your choice ('1' for push, '2' for pop, '3' for display, '4' for exit): ");
     scanf("%c", &ch);
     switch (ch) {
-      case '1' : push();
+      case '1' :
+        push();
         break;
-      case '2' : pop();
+      case '2' :
+        pop();
         break;
-      case '3' : display();
+      case '3' :
+        display();
         break;
-      case '4' : exit(0);
+      case '4' :
+        exit(0);
         break;
-      default : 
+      default :
         printf("Enter a valid choice.\n");
     }
   }
-  return 0;
+return 0;
 }
