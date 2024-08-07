@@ -40,7 +40,7 @@ void display() {
 int main() {
   do {
     int c;
-    printf("Enter the choice: ");
+    printf("Enter the choice 1 for push, 2 for pop, 3 for display, 4 for exit: ");
     scanf("%d", &c);
     switch (c) {
     case 1:
@@ -56,7 +56,7 @@ int main() {
       exit(0);
       break;
     default:
-      printf("Enter a valid choiice.\n");
+      printf("Enter a valid choiice .\n");
     }
   } while (1);
   return 0;
