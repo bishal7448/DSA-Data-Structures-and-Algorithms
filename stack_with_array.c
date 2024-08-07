@@ -27,7 +27,7 @@ void pop(){
   }
 }
 
-void daisplay(){
+void display(){
   if(top==-1){
     printf("The stack is underflow.\n");
   }else{
