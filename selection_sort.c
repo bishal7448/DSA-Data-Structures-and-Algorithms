@@ -1,6 +1,22 @@
 #include <stdio.h>
 
+void create_array(int array[], int size);
 void selection_sort(int array[], int size);
+void display_array(int array[], int size);
+
+int main(){
+
+  int size;
+  printf("Enter the size of the array: ");
+  scanf("%d", &size);
+  int arr[size];
+
+  create_array(arr, size);
+  selection_sort(arr, size);
+  display_array(arr, size);
+
+return 0;
+}
 
 
 void create_array(int array[], int size){
