@@ -10,7 +10,7 @@ void push(){
     printf("Stack is overflow.\n");
   }else{
     int data;
-    printf("Enter the data want to pushed: ");
+    printf("Enter the data want to push: ");
     scanf("%d", &data);
     top++;
     stack[top]=data;
@@ -19,18 +19,19 @@ void push(){
 
 void pop(){
   if (top==-1){
-    printf("The stack is underflow.\n");
+    printf("stack is underflow.\n");
   }else{
     int backup=stack[top];
     top--;
-    printf("The popoed data is %d.\n", backup);
+    printf("The popped data is %d.\n", backup);
   }
 }
 
 void display(){
   if (top==-1){
-    printf("Stack is underflow.\n");
+    printf("The stack is underflow.\n");
   }else{
+    printf("The array is:\n");
     for (int i=top; i>=0; i--){
       printf("%d\n", stack[i]);
     }
@@ -39,11 +40,11 @@ void display(){
 
 int main(){
   do{
-    int n;
-    printf("1 for push, 2 for pop, 3 display, 4 for exit.\n");
+    printf("1 for push, 2 for pop, 3 for display, 4 exit.\n");
+    int choice;
     printf("Enter your choice: ");
-    scanf("%d", &n);
-    switch (n){
+    scanf("%d", &choice);
+    switch(choice){
       case 1:
         push();
         break;
@@ -60,5 +61,5 @@ int main(){
         printf("Enter a valid choice.\n");
     }
   }while(1);
-return 0;
+  return 0;
 }
