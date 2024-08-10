@@ -15,7 +15,7 @@ int main(){
   selection_sort(arr, size);
   display_array(arr, size);
 
-return 0;
+  return 0;
 }
 
 
