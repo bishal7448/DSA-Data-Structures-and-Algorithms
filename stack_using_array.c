@@ -5,61 +5,71 @@
 int stack[size];
 int top=-1;
 
-void push(){
-  if (top==size-1){
-    printf("Stack is overflow.\n");
-  }else{
-    int data;
-    printf("Enter the data want to push: ");
-    scanf("%d", &data);
-    top++;
-    stack[top]=data;
-  }
-}
-
-void pop(){
-  if (top==-1){
-    printf("stack is underflow.\n");
-  }else{
-    int backup=stack[top];
-    top--;
-    printf("The popped data is %d.\n", backup);
-  }
-}
-
-void display(){
-  if (top==-1){
-    printf("The stack is underflow.\n");
-  }else{
-    printf("The array is:\n");
-    for (int i=top; i>=0; i--){
-      printf("%d\n", stack[i]);
+void push(){                    //Push some value in array.
+    int number;
+    printf("Enter the number want to push:");
+    scanf("%d", &number);
+    if(top==size-1){
+        printf("Stack is overflow.\n");
+    }else{
+        top++;
+        stack[top]=number;
     }
-  }
+}
+
+void pop(){                    //Pop the top value from array.
+    if(top==-1){
+        printf("Stack is underflow.\n");
+    }else{
+        int backup=stack[top];
+        top--;
+        printf("The popped data is %d.\n", backup);
+    }
+}
+
+void display(){                    //Display the present array.
+    if(top==-1){
+        printf("Stack is underflow.\n");
+    }else{
+        for (int i=top; i>=0; i--){
+            printf("%d\n", stack[i]);
+        }
+    }
+}
+
+void peek(){                    //Get the top value of the present array.
+    if(top==-1){
+        printf("Stack is underflow.\n");
+    }else{
+        printf("The top value is %d\n", stack[top]);
+    }
 }
 
 int main(){
-  do{
-    printf("1 for push, 2 for pop, 3 for display, 4 exit.\n");
-    int choice;
-    printf("Enter your choice: ");
-    scanf("%d", &choice);
-    switch(choice){
-      case 1:
-        push();
-        break;
-      case 2:
-        pop();
-        break;
-      case 3:
-        display();
-        break;
-      case 4:
-        exit(0);
-        break;
-      default:
-        printf("Enter a valid choice.\n");
-    }
-  }while(1);
-  return 0;
+    do{
+        printf("Enter 1 for push, 2 for pop, 3 for display, 4 for top, 5 for exit.\n");
+        int choice;
+        printf("Enter your choice:");                    //Enter your choice.
+        scanf("%d", &choice);
+        switch(choice){
+            case 1:
+                push();
+                break;
+            case 2:
+                pop();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                peek();
+                break;
+            case 5:
+                exit(0);
+                break;
+            default:
+                printf("Enter a valid choice.\n");
+        }
+    }while(1);                    //Loop condition.
+    return 0;
 }
