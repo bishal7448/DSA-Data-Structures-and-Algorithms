@@ -7,7 +7,7 @@ void display_array(int array[], int size);
 int main(){
 
   int size;
-  printf("Enter the size of the array: ");
+  printf("Enter the size of the array:");
   scanf("%d", &size);
   int arr[size];
 
@@ -21,7 +21,7 @@ int main(){
 
 void create_array(int array[], int size){
   for (int i=0; i<size; i++){
-    printf("Enter the value of %d index position: ", i);
+    printf("Enter the value of %d index position:", i);
     scanf("%d", &array[i]);
   }
 }
