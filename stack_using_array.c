@@ -5,7 +5,7 @@
 int stack[size];
 int top=-1;
 
-void push(){                    //Push some value in top of the array.
+void push(){                    //Push some value in top of the array
     int number;
     printf("Enter the number want to push:");
     scanf("%d", &number);
@@ -17,7 +17,7 @@ void push(){                    //Push some value in top of the array.
     }
 }
 
-void pop(){                    //Pop the top value from array.
+void pop(){                    //Pop the top value from array
     if(top==-1){
         printf("Stack is underflow.\n");
     }else{
@@ -37,7 +37,7 @@ void display(){                    //Display the present array.
     }
 }
 
-void peek(){                    //Get the top value of the present array.
+void peek(){                    //Get the top value of the present array
     if(top==-1){
         printf("Stack is underflow.\n");
     }else{
@@ -49,7 +49,7 @@ int main(){
     do{
         printf("Enter 1 for push, 2 for pop, 3 for display, 4 for top, 5 for exit.\n");
         int choice;
-        printf("Enter your choice:");                    //Enter your choice.
+        printf("Enter your choice:");                    //Enter your choice
         scanf("%d", &choice);
         switch(choice){                    //Cases
             case 1:
