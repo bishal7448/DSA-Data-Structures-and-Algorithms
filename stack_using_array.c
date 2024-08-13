@@ -5,7 +5,7 @@
 int stack[size];
 int top=-1;
 
-void push(){                    //Push some value in array.
+void push(){                    //Push some value in top of the array.
     int number;
     printf("Enter the number want to push:");
     scanf("%d", &number);
@@ -51,7 +51,7 @@ int main(){
         int choice;
         printf("Enter your choice:");                    //Enter your choice.
         scanf("%d", &choice);
-        switch(choice){
+        switch(choice){                    //Cases
             case 1:
                 push();
                 break;
