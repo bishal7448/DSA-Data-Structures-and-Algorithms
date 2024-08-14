@@ -17,7 +17,7 @@ int main(){
   printf("Enter the value want to find:");
   scanf("%d", &key);
 
-  int result=binary_search(array, 1, size, key);          //Call
+  int result=binary_search(array, 0, size, key);          //Call
 
   printf("The searching value found at %d index position.\n", result);          //Result
 
