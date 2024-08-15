@@ -47,7 +47,7 @@ void peek(){                    //Get the top value of the present array
 
 int main(){
     do{
-        printf("Enter 1 for push, 2 for pop, 3 for display, 4 for top, 5 for exit.\n");
+        printf("Enter 1 for push, 2 for pop, 3 for display, 4 for peek, 5 for exit.\n");
         int choice;
         printf("Enter your choice:");                    //Enter your choice
         scanf("%d", &choice);
