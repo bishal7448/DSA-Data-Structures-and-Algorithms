@@ -1,38 +1,58 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define size 10
+#define size 3
 int queue[size];
 int front=-1;
-int rare=-1;
+int rear=-1;
 
 void enqueue(){
-    if(front=size-1){
-        printf("Queue is full.\n");
-    }else if(front=-1 && rare=-1){
-        front++;
-        rare++;
+    if(rear==size-1){
+        printf("Queue is overflow.\n");
+    }else if(front==-1 && rear==-1){
+        front=rear=0;
         int data;
         printf("Enter the data want to insert in queue:");
         scanf("%d", &data);
-        queue[rare]=data;
+        queue[rear]=data;
     }else{
-        rare++;
+        rear++;
         int data;
         printf("Enter the data want to insert in queue:");
         scanf("%d", &data);
-        queue[rare]=data;
+        queue[rear]=data;
     }
 }
 
 void dequeue(){
-    if(-1<front<size-1){
+    if(front==-1 && rear==-1){
+        printf("The queue is underflow.\n");
+    }else if(front>rear){
+        printf("The is not a value to print.\n");
+    }else{
         int backup;
         backup=queue[front];
         front++;
-        printf("The dequeue value is %d.\n", backup);
-    }else{
+        printf("The dequeue value is %d\n.", backup);
+    }
+}
+
+void display(){
+    if(front==-1 && rear==-1){
         printf("The queue is empty.\n");
+    }else{
+        printf("The queue:\n");
+        for(int i=front; i<=rear; i++){
+            printf("%d\n", queue[i]);
+        }
+    }
+}
+
+void peek(){
+    if(front==-1 && rear==-1){
+        printf("The queue is empty.\n");
+    }else{
+        printf("Front value is %d\n", queue[front]);
     }
 }
 
