@@ -35,3 +35,32 @@ void dequeue(){
         printf("The queue is empty.\n");
     }
 }
+
+int main(){
+    do{
+        printf("Enter 1 for enqueue, 2 for dequeue, 3 for display, 4 for peek, 5 for exit.\n");
+        int choice;
+        printf("Enter your choice:");                    //Enter your choice
+        scanf("%d", &choice);
+        switch(choice){                    //Cases
+            case 1:
+                enqueue();
+                break;
+            case 2:
+                dequeue();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                peek();
+                break;
+            case 5:
+                exit(0);
+                break;
+            default:
+                printf("Enter a valid choice.\n");
+        }
+    }while(1);                    //Loop condition.
+    return 0;
+}
