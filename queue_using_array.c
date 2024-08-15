@@ -3,46 +3,35 @@
 
 #define size 10
 int queue[size];
-int rare=-1;
 int front=-1;
+int rare=-1;
 
 void enqueue(){
-    if(rare==size-1){
-        printf("Queue is overflow.\n");
-    }else if(front==-1 && rare==-1){
-        int item;
-        printf("Enter value want to insert:");
-        scnaf("%d", &item);
+    if(front=size-1){
+        printf("Queue is full.\n");
+    }else if(front=-1 && rare=-1){
         front++;
         rare++;
-        queue[rare]=item;
+        int data;
+        printf("Enter the data want to insert in queue:");
+        scanf("%d", &data);
+        queue[rare]=data;
     }else{
-        int item;
-        printf("Enter value want to insert:");
-        scnaf("%d", &item);
-        rare+1;
-        queue[rare]=item;
+        rare++;
+        int data;
+        printf("Enter the data want to insert in queue:");
+        scanf("%d", &data);
+        queue[rare]=data;
     }
 }
 
 void dequeue(){
-    if(front==-1 && rare==-1){
-        printf("Queue is empty.\n");
+    if(-1<front<size-1){
+        int backup;
+        backup=queue[front];
+        front++;
+        printf("The dequeue value is %d.\n", backup);
     }else{
-        int back=queue[front];
-        front--;
-        printf("The dequeue value is %d.\n");
+        printf("The queue is empty.\n");
     }
 }
-
-void display(){
-    if(front==-1 && rare==-1){
-        printf("Queue is empty.\n");
-    }else{
-        printf("The array:\n");
-        for(int i=0; i<size; i++){
-            printf("%d", queue[i]);
-        }
-    }
-}
-        
