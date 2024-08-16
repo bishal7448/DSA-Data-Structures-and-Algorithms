@@ -6,12 +6,12 @@ int stack[size];
 int top=-1;
 
 void push(){                    //Push some value in top of the array
-    int number;
-    printf("Enter the number want to push:");
-    scanf("%d", &number);
     if(top==size-1){
         printf("Stack is overflow.\n");
     }else{
+        int number;
+        printf("Enter the number want to push:");
+        scanf("%d", &number);
         top++;
         stack[top]=number;
     }
