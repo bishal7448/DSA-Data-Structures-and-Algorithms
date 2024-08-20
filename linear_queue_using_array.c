@@ -27,8 +27,8 @@ void enqueue(){
 void dequeue(){
     if(front==-1 && rear==-1){
         printf("The queue is underflow.\n");
-    }else if(front>rear){
-        printf("The is not a value to print.\n");
+    }else if(front==rare){
+        front=rare=-1;
     }else{
         int backup;
         backup=queue[front];
