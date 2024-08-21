@@ -31,12 +31,12 @@ void dequeue(){
         int backup;
         backup=queue[front];
         front=rear=-1;
-        printf("The dequeue value is %d\n.", backup);
+        printf("The dequeue value is %d.\n", backup);
     }else{
         int backup;
         backup=queue[front];
         front++;
-        printf("The dequeue value is %d\n.", backup);
+        printf("The dequeue value is %d.\n", backup);
     }
 }
 
