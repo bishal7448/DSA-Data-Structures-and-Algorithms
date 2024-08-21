@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -27,10 +28,10 @@ void enqueue(){
 void dequeue(){
     if(front==-1 && rear==-1){
         printf("The queue is underflow.\n");
-    }else if(front==rare){
+    }else if(front==rear){
         int backup;
         backup=queue[front];
-        front=rare=-1;
+        front=rear=-1;
         printf("The dequeue value is %d\n.", backup);
     }else{
         int backup;
