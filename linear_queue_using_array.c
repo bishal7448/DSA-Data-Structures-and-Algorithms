@@ -7,14 +7,14 @@ int front=-1;
 int rear=-1;
 
 void enqueue(){
-    if(rear==size-1){
-        printf("Queue is overflow.\n");
-    }else if(front==-1 && rear==-1){
+    if(front==-1 && rear==-1){
         front=rear=0;
         int data;
         printf("Enter the data want to insert in queue:");
         scanf("%d", &data);
         queue[rear]=data;
+    }else if(rear==size-1){
+        printf("Queue is overflow.\n");
     }else{
         rear++;
         int data;
@@ -28,7 +28,10 @@ void dequeue(){
     if(front==-1 && rear==-1){
         printf("The queue is underflow.\n");
     }else if(front==rare){
+        int backup;
+        backup=queue[front];
         front=rare=-1;
+        printf("The dequeue value is %d\n.", backup);
     }else{
         int backup;
         backup=queue[front];
