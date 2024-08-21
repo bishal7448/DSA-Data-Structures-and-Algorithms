@@ -17,7 +17,7 @@ void enqueue(){
     }else if(front==(rear+1)%size){
         printf("Queue is overflow.\n");
     }else{
-        rear=(rear+1%size;
+        rear=(rear+1)%size;
         int data;
         printf("Enter the data want to insert in queue:");
         scanf("%d", &data);
@@ -48,7 +48,7 @@ void display(){
         printf("The queue:\n");
         int i=front;
         while(i!=rear){
-            printf("%d", queue[i]);
+            printf("%d\n", queue[i]);
             i=(i+1)%size;
         }
     }
