@@ -21,7 +21,7 @@ int main(){
     int choice;
     while(1){
         printf("Linked list operations:");
-        printf("\n1 for create node\n2 for display\n3 for insert at begining\n4 for insert at ending\n5 for insert at position\n6 for delete at begining\n7 for delete at ending\n8 for delete at position\n9 for exit.\n");
+        printf("\n1 for create node.\n2 for display.\n3 for insert at begining.\n4 for insert at ending.\n5 for insert at position.\n6 for delete at begining.\n7 for delete at ending.\n8 for delete at position.\n9 for exit.\n");
         printf("Enter your choice:");
         scanf("%d", &choice);
         switch(choice){
@@ -106,24 +106,24 @@ void insert_at_end(){
 }
 
 void insert_at_pos(){
-    struct node * new_node;
-    new_node=(struct node*)malloc(sizeof(struct node));
-    printf("Enter node data at end:");
-    scanf("%d", &new_node->data);
+    struct node * temp;
+    temp=(struct node*)malloc(sizeof(struct node));
+    printf("Enter node data at pos:");
+    scanf("%d", &temp->data);
     
-    new_node->next=NULL;
-    struct node *temp=head;
-    struct node *prev_temp;
+    temp->next=NULL;
+    struct node *ptr=head;
+    struct node *prev_ptr;
     int pos;
     printf("Enter position:");
     scanf("%d", &pos);
     
-    for(int i=1; i<=pos; i++){
-        prev_temp=new_node;
-        new_node=new_node->next;
+    for(int i=0; i<pos; i++){
+        prev_ptr=ptr;
+        ptr=ptr->next;
     }
-    new_node->next=temp;
-    prev_temp->next=new_node;
+    temp->next=ptr;
+    prev_ptr->next=temp;
 }
 
 void delete_at_beg(){
@@ -159,17 +159,19 @@ void delete_at_end(){
 }
 
 void delete_at_pos(){
-    int pos;
-    printf("Enter position:");
-    scanf("%d", &pos);
-    struct node * temp=head;
-    struct node *prev_temp;
+    struct node * ptr=head;
     if(head==NULL){
-        printf("Linked list is empty.");
+        printf("Linked list is empty.\n");
     }else{
-        for(int i=1; i<=pos; i++){
-            prev_temp=temp;
-            temp=temp->next;
+        int pos;
+        printf("Enter position want to delete:");
+        scanf("%d", &pos);
+        struct node * prev_ptr;
+        for(int i=0; i<pos; i++){
+            prev_ptr=ptr;
+            ptr=ptr->next;
         }
+        prev_ptr->next=ptr->next;
+        free(ptr);
     }
 }
