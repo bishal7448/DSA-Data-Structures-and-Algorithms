@@ -133,3 +133,32 @@ void delete_at_beg(){
         free(ptr);
     }
 }
+
+void delete_at_end(){
+    struct node *ptr = head;
+    if(head==NULL){
+        printf("Linked list is empty:");
+    }else{
+        if(ptr->next!=NULL){
+            ptr=ptr->next;
+        }
+        ptr->prev->next=NULL;
+        free(ptr);
+    }
+}
+
+void delete_at_pos{
+    int pos, i;
+    printf("Enter position:");
+    scanf("%d", &pos);
+    struct node *ptr=head;
+    if(head==NULL){
+        printf("Linked list is empty:");
+    }else{
+        for(i=0; i<pos; i++){
+            ptr=ptr->next;
+        }
+        ptr->next->prev=ptr->prev;
+        ptr->prev->next=ptr->next;
+    }
+}
