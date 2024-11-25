@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int binary_search(int array[], int start, int end, int key);          //Declaration
-
+int binary_search(int array[], int start, int end, int key);      //Declaration
+void bubble_sort(int array[], int size)
 
 int main(){
   int size;          //Create an array
@@ -13,6 +13,8 @@ int main(){
       scanf("%d", &array[i]);
   }
 
+  bubble_sort(array, size);
+
   int key;          //Enter the searching value
   printf("Enter the value want to find:");
   scanf("%d", &key);
@@ -22,6 +24,18 @@ int main(){
   printf("The searching value found at %d index position.\n", result);          //Result
 
   return 0;
+}
+
+void bubble_sort(int array[], int size){
+  for (int i=0; i<size; i++){
+    for (int j=i+1; j<size; j++){
+      if (array[i]>array[j]){
+        int temp=array[i];
+        array[i]=array[j];
+        array[j]=temp;
+      }
+    }
+  }
 }
 
 int binary_search(int array[], int start, int end, int key){          //Defination
