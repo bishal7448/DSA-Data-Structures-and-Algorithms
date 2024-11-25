@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int binary_search(int array[], int start, int end, int key);      //Declaration
-void bubble_sort(int array[], int size)
+void bubble_sort(int array[], int size);
 
 int main(){
   int size;          //Create an array
